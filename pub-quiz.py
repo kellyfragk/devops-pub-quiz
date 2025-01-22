@@ -7,7 +7,6 @@ class QuestionType(Enum):
     TRUE_FALSE = 2,
     OPEN_RESPONSE = 3,
 
-
 # List of questions, options, and answers
 quiz_questions = [
     {
@@ -54,6 +53,12 @@ quiz_questions = [
 #    },
 ]
 
+# Initialize score and streak tracking
+score = 0
+total_questions = len(quiz_questions)
+current_streak = 0
+best_streak = 0
+
 def multiple_choice(question):
     for option in question["options"]:
         print(option)
@@ -65,8 +70,10 @@ def true_false(question):
 def open_response(question):
     return input("Your answer: ").strip().upper() # Ensuring the input is uppercase for comparison
 
+
 # Loop through each question
-for question in quiz_questions:
+for question_num, question in enumerate(quiz_questions, 1):
+    print(f"\nQuestion {question_num}/{total_questions}")
     # Display the question and options
     print(question["question"])
 
@@ -77,11 +84,33 @@ for question in quiz_questions:
     else:
         user_answer = open_response(question)
 
-    # Check if the answer is correct
+     # Check if the answer is correct and update score
     if any(x.upper() == user_answer for x in question["answer"]):
         print("CORRECT!")
+        score += 1
+        current_streak += 1
+        best_streak = max(current_streak, best_streak)
+        print(f"Correct! 🎯 Current streak: {current_streak}!")
     else:
         print(f"WRONG! Clearly the correct answer was {question['answer'][0]}.")
+        current_streak = 0
+
+# Display final score with additional stats
+print("\n=== Final Score ===")
+print(f"You got {score} out of {total_questions} questions correct!")
+percentage = (score / total_questions) * 100
+print(f"That's {percentage:.1f}%!")
+print(f"Best streak: {best_streak} questions in a row! 🔥")
+
+# Add a performance message
+if percentage == 100:
+    print("Perfect score! 🏆")
+elif percentage >= 70:
+    print("Great job! 🌟")
+elif percentage >= 50:
+    print("Good effort! 👍")
+else:
+    print("Keep practicing! 📚")
 
 # Goodbye message
-print("Thanks for playing our Pub Quiz!")
+print("\nThanks for playing our Pub Quiz!")
