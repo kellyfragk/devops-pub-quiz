@@ -40,19 +40,18 @@ quiz_questions = [
         "options": ["A) Les Miserable", "B) The Lion King", "C) The Phantom of the Opera"],
         "answer": "C"
     },
-    {
-        "question": "What is the name of this question's author?",
-        "type": QuestionType.OPEN_RESPONSE,
-        "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
-        "answer": ["Glenn", "Glenn Clarke"]
-    },
-    {
-        "question": "What is the answer for True?",
-        "type": QuestionType.TRUE_FALSE,
-        "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
-        "answer": ["True", "T"]
-    },
-    # Learners can add more questions here following the same structure
+#    {
+#        "question": "What is the name of this question's author?",
+#        "type": QuestionType.OPEN_RESPONSE,
+#        "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
+#        "answer": ["Glenn", "Glenn Clarke"]
+#    },
+#    {
+#        "question": "What is the answer for True?",
+#        "type": QuestionType.TRUE_FALSE,
+#        "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
+#        "answer": ["True", "T"]
+#    },
 ]
 
 def multiple_choice(question):
