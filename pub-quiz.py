@@ -15,6 +15,11 @@ quiz_questions = [
         "options": ["A) Apollo 11", "B) Apollo 12", "C) Apollo 13"],
         "answer": ["A"]
     },
+   {
+       "question": "Our solar system is located in what galaxy?",
+       "type": QuestionType.OPEN_RESPONSE,
+       "answer": ["Milky Way", "milky way", "The Milky Way"]
+   },
     {
         "question": "Who sang the title song for the latest Bond film, No Time to Die?",
         "type": QuestionType.MULTIPLE_CHOICE,
@@ -33,24 +38,17 @@ quiz_questions = [
         "options": ["A) Henry Ford", "B) Karl Benz", "C) Henry M. Leland"],
         "answer": ["B"]
     },
+   {
+       "question": "The United States is the biggest producer of oil",
+       "type": QuestionType.TRUE_FALSE,
+       "answer": ["True", "T"]
+   },
     {
         "question": "What is the longest-running Broadway show ever?",
         "type": QuestionType.MULTIPLE_CHOICE,
         "options": ["A) Les Miserable", "B) The Lion King", "C) The Phantom of the Opera"],
         "answer": ["C"]
     },
-#    {
-#        "question": "What is the name of this question's author?",
-#        "type": QuestionType.OPEN_RESPONSE,
-#        "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
-#        "answer": ["Glenn", "Glenn Clarke"]
-#    },
-#    {
-#        "question": "What is the answer for True?",
-#        "type": QuestionType.TRUE_FALSE,
-#        "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
-#        "answer": ["True", "T"]
-#    },
 ]
 
 # Initialize score and streak tracking
@@ -62,7 +60,7 @@ best_streak = 0
 def multiple_choice(question):
     for option in question["options"]:
         print(option)
-    return input("Your answer (A, B, C, D): ").strip().upper() # Ensuring the input is uppercase for comparison
+    return input("Your answer (A, B, C): ").strip().upper() # Ensuring the input is uppercase for comparison
 def true_false(question):
     print("True (T) or False (F)?")
     return input("Your answer (T, F): ").strip().upper() # Ensuring the input is uppercase for comparison
