@@ -20,25 +20,25 @@ quiz_questions = [
         "question": "Who sang the title song for the latest Bond film, No Time to Die?",
         "type": QuestionType.MULTIPLE_CHOICE,
         "options": ["A) Adele", "B) Sam Smith", "C) Billie Eilish"],
-        "answer": "C"
+        "answer": ["C"]
     },
     {
         "question": "Where was the first example of paper money used??",
         "type": QuestionType.MULTIPLE_CHOICE,
         "options": ["A) China", "B) Turkey", "C) Greece"],
-        "answer": "A"
+        "answer": ["A"]
     },
     {
         "question": "Who is generally considered the inventor of the motor car?",
         "type": QuestionType.MULTIPLE_CHOICE,
         "options": ["A) Henry Ford", "B) Karl Benz", "C) Henry M. Leland"],
-        "answer": "B"
+        "answer": ["B"]
     },
     {
         "question": "What is the longest-running Broadway show ever?",
         "type": QuestionType.MULTIPLE_CHOICE,
         "options": ["A) Les Miserable", "B) The Lion King", "C) The Phantom of the Opera"],
-        "answer": "C"
+        "answer": ["C"]
     },
 #    {
 #        "question": "What is the name of this question's author?",
