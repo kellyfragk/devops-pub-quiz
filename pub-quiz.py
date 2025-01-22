@@ -1,9 +1,6 @@
 # Welcome message for the quiz
 print("Welcome to the Pub Quiz!")
 
-# Initialize score
-score = 0
-
 # List of questions, options, and answers
 quiz_questions = [
     {
@@ -33,10 +30,16 @@ quiz_questions = [
     },
     # Learners can add more questions here following the same structure
 ]
+
+# Initialize score and streak tracking
+score = 0
 total_questions = len(quiz_questions)
+current_streak = 0
+best_streak = 0
 
 # Loop through each question
-for question in quiz_questions:
+for question_num, question in enumerate(quiz_questions, 1):
+    print(f"\nQuestion {question_num}/{total_questions}")
     # Display the question and options
     print(question["question"])
     for option in question["options"]:
@@ -49,8 +52,12 @@ for question in quiz_questions:
     if user_answer == question["answer"]:
         print("CORRECT!")
         score += 1
+        current_streak += 1
+        best_streak = max(current_streak, best_streak)
+        print(f"Correct! 🎯 Current streak: {current_streak}!")
     else:
         print(f"WRONG! Clearly the correct answer was {question['answer']}.")
+        current_streak = 0
 
 # Display final score
 print("\n=== Final Score ===")
@@ -68,11 +75,12 @@ elif percentage >= 50:
 else:
     print("Keep practicing! 📚")
 
-# Display final score
+# Display final score with additional stats
 print("\n=== Final Score ===")
 print(f"You got {score} out of {total_questions} questions correct!")
 percentage = (score / total_questions) * 100
 print(f"That's {percentage:.1f}%!")
+print(f"Best streak: {best_streak} questions in a row! 🔥")
 
 # Add a performance message
 if percentage == 100:
